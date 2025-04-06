@@ -13,7 +13,7 @@ const main = async () => {
                 <img src="${recipe.image}" alt="${recipe.name}">
             </a>
             <h3>${recipe.name}</h3>
-            <a href="./recipe.html?id=${recipe.id}" /> Ver más </a>
+            <a href="/recipe.html?id=${recipe.id}">Ver más</a>
         </div>
         `;
     })

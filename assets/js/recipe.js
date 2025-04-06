@@ -1,4 +1,25 @@
 const main = async () => {
+  const id = new URLSearchParams(window.location.search).get("id"); // obtiene el id
+  const res = await fetch(`https://dummyjson.com/recipes/${id}`); // hace la petición
+  const data = await res.json(); // convierte la respuesta en JS
+
+  document.getElementById("title").textContent = data.name; //nombre
+  document.getElementById("image").src = data.image; //imagen
+  document.getElementById("image").alt = data.name; //alt (es el nombre de la receta)
+
+  const lista = data.instructions.map(paso => `<li>${paso}</li>`).join("");
+
+  document.getElementById("instructions").innerHTML = lista; //agrega la lista al html
+  
+};
+
+document.getElementById("btn-back").addEventListener("click", () => {
+  window.history.back();
+});
+
+main();
+
+/*const main = async () => {
   const id = new URLSearchParams(window.location.search).get("id");
   const res = await fetch(`https://dummyjson.com/recipes/${id}`);
   const data = await res.json();
@@ -28,4 +49,4 @@ document.getElementById("btn-back").addEventListener("click", () => {
   window.history.back();
 }); // boton para volver atras
 
-main();
+main();*/

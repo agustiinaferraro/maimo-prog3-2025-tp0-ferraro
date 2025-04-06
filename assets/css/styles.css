@@ -98,7 +98,6 @@ header .logo_container img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
 }
 
 .hero img {
@@ -106,7 +105,6 @@ header .logo_container img {
 }
 
 .recetas_grid {
-    margin-top: 5% !important;
     margin-bottom: 5% !important;
     display: grid;
     /*grid-template-columns: repeat(4, 1fr);*/ /*esto es para desktop*/
